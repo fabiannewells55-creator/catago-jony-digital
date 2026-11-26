@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Jony Digital | Catálogo</title>
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(145deg,#050814,#101c39);
+color:white;
+min-height:100vh;
+}
+header{
+text-align:center;
+padding:35px 15px;
+}
+h1{
+font-size:clamp(32px,6vw,60px);
+margin:0;
+color:#54caff;
+text-shadow:0 3px 0 #145aa5;
+}
+header p{color:#cbd5e1}
+.catalogo{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:22px;
+max-width:1300px;
+margin:auto;
+padding:20px;
+}
+.tarjeta{
+--color:#269bff;
+background:#10182c;
+border:2px solid var(--color);
+border-radius:20px;
+padding:18px;
+box-shadow:0 4px 20px #0008;
+}
+.kraten{--color:#ff5050}
+.future{--color:#269bff}
+.argentum{--color:#bd65ff}
+h2{
+color:var(--color);
+text-align:center;
+font-size:27px;
+}
+.pantallas{
+text-align:center;
+background:#202d46;
+padding:12px;
+border-radius:10px;
+font-weight:bold;
+}
+.precio{
+font-size:35px;
+font-weight:bold;
+text-align:center;
+margin:20px 0 5px;
+}
+.mensual{
+text-align:center;
+color:#cbd5e1;
+}
+button{
+width:100%;
+padding:14px;
+margin-top:18px;
+border:0;
+border-radius:12px;
+background:var(--color);
+color:#080e1b;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+}
+.contenido{
+line-height:1.8;
+font-size:15px;
+}
+.beneficios{
+background:#25183e;
+border:1px solid #bd65ff;
+border-radius:12px;
+padding:14px;
+line-height:1.8;
+}
+.galeria{
+display:grid;
+gap:12px;
+margin-top:15px;
+}
+.galeria img{
+width:100%;
+border-radius:10px;
+cursor:zoom-in;
+}
+.aviso{
+padding:25px 10px;
+text-align:center;
+color:#94a3b8;
+}
+dialog{
+background:#10182c;
+color:white;
+border:1px solid #54caff;
+border-radius:15px;
+max-width:95vw;
+}
+dialog img{
+max-width:85vw;
+max-height:75vh;
+object-fit:contain;
+}
+@media(max-width:850px){
+.catalogo{
+grid-template-columns:1fr;
+max-width:550px;
+padding:15px;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>JONY DIGITAL</h1>
+<p>TU ENTRETENIMIENTO SIN LÍMITES</p>
+<h3>Elegí tu aplicación favorita</h3>
+</header>
+
+<main class="catalogo" id="catalogo"></main>
+
+<footer class="aviso">
+Jony Digital · Catálogo de aplicaciones
+</footer>
+
+<dialog id="visor">
+<img id="fotoGrande" alt="Vista ampliada">
+<button onclick="document.getElementById('visor').close()">
+Cerrar
+</button>
+</dialog>
+
+<script>
+const aplicaciones = [
+{
+nombre:"KRATEN",
+clase:"kraten",
+precio:"26.000",
+pantallas:3,
+fotos:["kraten1.jpg","kraten2.jpg"]
+},
+{
+nombre:"FUTURE TV",
+clase:"future",
+precio:"25.000",
+pantallas:3,
+fotos:["future1.jpg","future2.jpg"]
+},
+{
+nombre:"ARGENTUM PRO",
+clase:"argentum",
+precio:"25.000",
+pantallas:4,
+fotos:["argentum1.jpg","argentum2.jpg"],
+extra:true
+}
+];
+
+const contenidos = [
+"📺 Canales en vivo",
+"🏆 Eventos deportivos",
+"⚽ Pack Fútbol",
+"🎬 Pack HBO",
+"🇦🇷 Canales nacionales y del interior",
+"🌎 Canales internacionales",
+"🍿 Películas de estreno",
+"🎥 Acción, drama y terror",
+"📽️ Series",
+"🧸 Programación infantil",
+"🔞 Canales para adultos (+18)"
+];
+
+document.getElementById("catalogo").innerHTML =
+aplicaciones.map((app,i)=>`
+<article class="tarjeta ${app.clase}">
+<h2>${app.nombre}</h2>
+<div class="pantallas">
+🖥️ ${app.pantallas} PANTALLAS
+</div>
+
+<div class="precio">$${app.precio}</div>
+<div class="mensual">POR MES</div>
+
+${app.extra ? `
+<div class="beneficios">
+<strong>BENEFICIOS ADICIONALES</strong><br>
+🎵 Spotify<br>
+▶️ YouTube Premium
+</div>` : ""}
+
+<button onclick="verDetalles(${i},this)">
+Ver aplicación
+</button>
+
+<section id="detalle${i}" hidden>
+<div class="galeria">
+${app.fotos.map(foto=>`
+<img src="${foto}"
+alt="${app.nombre}"
+onclick="ampliar(this.src)"
+onerror="this.hidden=true">
+`).join("")}
+</div>
+
+<h3>Contenidos incluidos</h3>
+<div class="contenido">
+${contenidos.map(c=>`<div>${c}</div>`).join("")}
+</div>
+</section>
+</article>
+`).join("");
+
+function verDetalles(i,boton){
+const detalle=document.getElementById("detalle"+i);
+detalle.hidden=!detalle.hidden;
+boton.textContent=detalle.hidden
+?"Ver aplicación":"Ocultar detalles";
+}
+
+function ampliar(src){
+document.getElementById("fotoGrande").src=src;
+document.getElementById("visor").showModal();
+}
+</script>
+
+</body>
+</html>
