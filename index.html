@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Jony Digital | Catálogo</title>
+
 <style>
 *{box-sizing:border-box}
 body{
@@ -125,6 +127,7 @@ padding:15px;
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -153,21 +156,21 @@ nombre:"KRATEN",
 clase:"kraten",
 precio:"26.000",
 pantallas:3,
-fotos:["kraten1.jpg","kraten2.jpg"]
+fotos:["kraten1.png","kraten2.png"]
 },
 {
 nombre:"FUTURE TV",
 clase:"future",
 precio:"25.000",
 pantallas:3,
-fotos:["future1.jpg","future2.jpg"]
+fotos:["future1.png","future2.png"]
 },
 {
 nombre:"ARGENTUM PRO",
 clase:"argentum",
 precio:"25.000",
 pantallas:4,
-fotos:["argentum1.jpg","argentum2.jpg"],
+fotos:["argentum1.png","argentum2.png"],
 extra:true
 }
 ];
@@ -190,6 +193,7 @@ document.getElementById("catalogo").innerHTML =
 aplicaciones.map((app,i)=>`
 <article class="tarjeta ${app.clase}">
 <h2>${app.nombre}</h2>
+
 <div class="pantallas">
 🖥️ ${app.pantallas} PANTALLAS
 </div>
@@ -209,6 +213,7 @@ Ver aplicación
 </button>
 
 <section id="detalle${i}" hidden>
+
 <div class="galeria">
 ${app.fotos.map(foto=>`
 <img src="${foto}"
@@ -219,9 +224,11 @@ onerror="this.hidden=true">
 </div>
 
 <h3>Contenidos incluidos</h3>
+
 <div class="contenido">
 ${contenidos.map(c=>`<div>${c}</div>`).join("")}
 </div>
+
 </section>
 </article>
 `).join("");
@@ -241,3 +248,4 @@ document.getElementById("visor").showModal();
 
 </body>
 </html>
+
