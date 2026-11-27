@@ -1190,3 +1190,38 @@ agregarDescargaKraten();
 
 })();
 </script>
+<script>
+(function(){
+  const kraten = document.querySelector(".kraten");
+  const future = document.querySelector(".future");
+
+  if (!kraten || !future) return;
+
+  const bloques = kraten.querySelectorAll(
+    "section, div, details"
+  );
+
+  const descarga = Array.from(bloques)
+    .filter(el =>
+      el.textContent.includes("TV Box") &&
+      el.querySelector('a[href*="aftv.news"]')
+    ).pop();
+
+  if (!descarga) return;
+
+  const copia = descarga.cloneNode(true);
+
+  copia.innerHTML = copia.innerHTML
+    .replace(/kraten/gi, "FUTURE TV")
+    .replace(
+      /https?:\/\/aftv\.news\/\d+/gi,
+      "http://aftv.news/9319730"
+    );
+
+  copia.id = "descarga-future";
+
+  if (!document.getElementById("descarga-future")) {
+    future.appendChild(copia);
+  }
+})();
+</script>
