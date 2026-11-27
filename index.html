@@ -1446,3 +1446,137 @@ window.addEventListener("load", corregirFuture);
 
 })();
 </script>
+<style>
+.future .tvbox-chrome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 5px;
+  margin-bottom: 18px;
+  border-radius: 20px;
+  background: radial-gradient(
+    ellipse at center,
+    #123c70,
+    #091525 75%
+  );
+}
+
+.future .tvbox-chrome .k-dispositivo {
+  width: 55% !important;
+  height: auto !important;
+  margin: 0 !important;
+  filter: drop-shadow(0 5px 9px #008cff);
+}
+
+.future .chrome-marca {
+  width: 30%;
+  text-align: center;
+}
+
+.future .chrome-marca img {
+  display: block;
+  width: 85px;
+  max-width: 100%;
+  margin: 0 auto 8px;
+  filter: drop-shadow(0 0 8px #009dff);
+}
+
+.future .chrome-marca strong {
+  color: white;
+  font-size: 19px;
+  text-shadow: 0 2px 4px #000;
+}
+
+.future .k-metodo {
+  border: 1px solid #168cff;
+  background: linear-gradient(
+    145deg,#142a48,#091324
+  );
+  box-shadow: 0 4px 12px #0006;
+}
+
+.future .k-metodo h4 {
+  color: #79d5ff;
+  text-align: center;
+}
+
+.future .k-copiar {
+  background: linear-gradient(
+    180deg,#239fff,#0750a5
+  );
+  border-radius: 13px;
+  box-shadow: 0 4px 0 #06356b;
+  color: white;
+}
+
+.future .tvbox-chrome,
+.future .tvbox-chrome * {
+  animation: none !important;
+}
+</style>
+
+<script>
+(function(){
+
+function mejorarFutureChrome(){
+
+  const future = document.querySelector(".future");
+
+  if(!future) return;
+
+  const metodos = future.querySelectorAll(".k-metodo");
+
+  metodos.forEach(metodo => {
+
+    const titulo = metodo.querySelector("h4");
+
+    if(!titulo) return;
+
+    if(!titulo.textContent.includes("TV BOX")) return;
+
+    if(metodo.querySelector(".tvbox-chrome")) return;
+
+    const dispositivo = metodo.querySelector(".k-dispositivo");
+
+    if(!dispositivo) return;
+
+    const bloque = document.createElement("div");
+
+    bloque.className = "tvbox-chrome";
+
+    dispositivo.before(bloque);
+
+    bloque.appendChild(dispositivo);
+
+    const chrome = document.createElement("div");
+
+    chrome.className = "chrome-marca";
+
+    chrome.innerHTML = `
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg"
+        alt="Google Chrome">
+      <strong>Chrome</strong>
+    `;
+
+    bloque.appendChild(chrome);
+
+  });
+
+  const contacto = future.querySelector(
+    ".contactar-whatsapp"
+  );
+
+  if(contacto){
+    contacto.parentElement.appendChild(contacto);
+  }
+
+}
+
+window.addEventListener("load", mejorarFutureChrome);
+
+mejorarFutureChrome();
+
+})();
+</script>
