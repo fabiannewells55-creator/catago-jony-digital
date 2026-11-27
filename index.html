@@ -1580,3 +1580,60 @@ mejorarFutureChrome();
 
 })();
 </script>
+<style>
+.kraten .k-enlace {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  overflow-wrap: anywhere;
+}
+
+.kraten .logo-chrome {
+  width: 32px !important;
+  height: 32px !important;
+  object-fit: contain;
+  flex-shrink: 0;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+}
+</style>
+
+<script>
+(function(){
+
+function agregarChromeKraten(){
+
+  document.querySelectorAll(
+    ".kraten .k-enlace"
+  ).forEach(function(enlace){
+
+    if(enlace.querySelector(".logo-chrome")) return;
+
+    enlace.innerHTML = `
+      <img class="logo-chrome"
+      src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Chrome_icon_%28September_2014%29.svg"
+      alt="Google Chrome">
+
+      <span>https://aftv.news/5702599</span>
+    `;
+
+  });
+
+}
+
+if(document.readyState === "loading"){
+  document.addEventListener(
+    "DOMContentLoaded", agregarChromeKraten
+  );
+}else{
+  agregarChromeKraten();
+}
+
+window.addEventListener(
+  "load", agregarChromeKraten
+);
+
+})();
+</script>
