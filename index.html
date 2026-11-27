@@ -55,11 +55,17 @@ box-shadow:0 4px 20px #0008;
 
 .logo-app{
 display:block;
-width:100%;
+width:150px;
 height:150px;
+max-width:100%;
 object-fit:contain;
+border-radius:20px;
 margin:0 auto 10px;
 filter:drop-shadow(0 5px 8px #0009);
+}
+
+.logo-app[hidden]{
+display:none;
 }
 
 h2{
@@ -225,7 +231,7 @@ const aplicaciones = [
 {
 nombre:"KRATEN",
 clase:"kraten",
-logo:"kraten-logo.png",
+logo:"IMG-20261118-WA0160.jpg",
 precio:"26.000",
 pantallas:3,
 fotos:["kraten1.png","kraten2.png"]
@@ -233,7 +239,7 @@ fotos:["kraten1.png","kraten2.png"]
 {
 nombre:"FUTURE TV",
 clase:"future",
-logo:"future-logo.png",
+logo:"IMG-20261118-WA0142.jpg",
 precio:"25.000",
 pantallas:3,
 fotos:["future1.png","future2.png"]
@@ -241,7 +247,7 @@ fotos:["future1.png","future2.png"]
 {
 nombre:"ARGENTUM PRO",
 clase:"argentum",
-logo:"argentum-logo.png",
+logo:"IMG-20261118-WA0161.jpg",
 precio:"25.000",
 pantallas:4,
 fotos:["argentum1.png","argentum2.png"],
@@ -270,7 +276,8 @@ aplicaciones.map((app,i)=>`
 
 <img class="logo-app"
 src="${app.logo}"
-alt="Logo ${app.nombre}">
+alt="Logo ${app.nombre}"
+onerror="this.hidden=true">
 
 <h2 class="logo-3d">${app.nombre}</h2>
 
