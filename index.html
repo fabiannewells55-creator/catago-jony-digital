@@ -339,3 +339,61 @@ document.getElementById("visor").showModal();
 </script>
 </body>
 </html>
+<style>
+.guia-instalacion{
+max-width:1260px;
+margin:15px auto;
+width:calc(100% - 30px);
+padding:22px;
+background:#10182c;
+border:2px solid #54caff;
+border-radius:20px;
+box-shadow:0 4px 20px #0008;
+color:white;
+line-height:1.8;
+}
+
+.guia-instalacion h2{
+color:#54caff;
+text-align:center;
+font-size:23px;
+margin:0 0 18px;
+}
+
+.guia-instalacion p{
+margin:12px 0;
+}
+
+.guia-final{
+text-align:center;
+color:#54caff;
+font-weight:bold;
+margin-top:20px;
+}
+</style>
+
+<section id="guiaInstalacion" class="guia-instalacion">
+
+<h2>📥 CÓMO DESCARGAR E INSTALAR</h2>
+
+<p>📺 <strong>PASO 1:</strong> Contar con un televisor con sistema Android TV.</p>
+
+<p>📲 <strong>PASO 2:</strong> Descargar la aplicación Downloader desde la tienda de aplicaciones.</p>
+
+<p>🔢 <strong>PASO 3:</strong> Solicitar al vendedor el código de descarga de la aplicación elegida.</p>
+
+<p>⬇️ <strong>PASO 4:</strong> Ingresar el código en Downloader, descargar e instalar la aplicación.</p>
+
+<p>🔑 <strong>PASO 5:</strong> Ingresar con el usuario y la contraseña proporcionados por el vendedor.</p>
+
+<div class="guia-final">
+🍿 ¡YA PODÉS DISFRUTAR DE TU ENTRETENIMIENTO!
+</div>
+
+</section>
+
+<script>
+document.getElementById("catalogo").before(
+document.getElementById("guiaInstalacion")
+);
+</script>
