@@ -2262,3 +2262,48 @@ document.getElementById('catalogo').after(s);
   );
 })();
 </script>
+<style>
+.tarjeta.kraten .k-enlace,
+.tarjeta.future .k-enlace {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 12px 8px !important;
+  background: #080f1c !important;
+  border: 1px solid #269bff !important;
+  border-radius: 12px !important;
+  color: #83d7ff !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+}
+
+.tarjeta.kraten .k-enlace img,
+.tarjeta.future .k-enlace img {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  object-fit: contain !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.k-enlace span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.tarjeta.kraten .k-copiar,
+.tarjeta.future .k-copiar {
+  background: linear-gradient(
+    #389bea,#124d91
+  ) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 0 #092c59 !important;
+  animation: none !important;
+  transition: none !important;
+}
+</style>
