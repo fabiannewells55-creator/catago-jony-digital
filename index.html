@@ -879,3 +879,314 @@ marco.querySelector(".logo-premium-centro").appendChild(logo);
 </script>
 </body>
 </html>
+<style>
+.kraten-descargas{
+  margin:22px 0;
+  padding:12px;
+  border:1px solid #168cff;
+  border-radius:18px;
+  background:linear-gradient(145deg,#101e35,#050b18);
+  box-shadow:0 5px 15px #0008;
+  color:white;
+}
+
+.kraten-descargas h3{
+  text-align:center;
+  color:#72caff;
+  font-size:21px;
+  margin:10px 0 20px;
+}
+
+.k-metodo{
+  padding:15px;
+  margin-bottom:16px;
+  border:1px solid #267ac0;
+  border-radius:15px;
+  background:linear-gradient(145deg,#142a48,#091324);
+}
+
+.k-metodo h4{
+  text-align:center;
+  color:#80d5ff;
+  font-size:19px;
+  margin:12px 0;
+}
+
+.k-metodo p,.k-metodo li{
+  font-size:15px;
+  line-height:1.7;
+  color:#edf5ff;
+}
+
+.k-dispositivo{
+  display:block;
+  width:125px;
+  height:115px;
+  margin:5px auto 15px;
+  filter:drop-shadow(0 6px 5px #000);
+}
+
+.k-descargar{
+  display:block;
+  text-align:center;
+  background:linear-gradient(#25c76b,#087b36);
+  color:white!important;
+  font-size:17px;
+  font-weight:bold;
+  padding:16px 8px;
+  border-radius:12px;
+  text-decoration:none;
+  border:1px solid #5bf395;
+  box-shadow:0 4px 0 #064b25;
+}
+
+.k-aviso{
+  background:#302710;
+  border:1px solid #d5a72e;
+  border-radius:10px;
+  padding:12px;
+  margin-top:15px;
+  color:#ffe18a;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.k-enlace{
+  background:#050c18;
+  border:1px solid #278fff;
+  border-radius:10px;
+  padding:12px 6px;
+  color:#83d7ff;
+  text-align:center;
+  overflow-wrap:anywhere;
+  font-weight:bold;
+  font-size:14px;
+}
+
+.k-copiar{
+  background:linear-gradient(#318ce7,#154d90)!important;
+  color:white!important;
+  font-size:14px!important;
+  padding:10px!important;
+  margin-top:10px!important;
+  box-shadow:0 3px 0 #092c59!important;
+}
+
+.k-downloader{
+  display:block;
+  width:100px;
+  max-width:100%;
+  border-radius:18px;
+  margin:10px auto;
+}
+
+.k-codigo{
+  text-align:center;
+  font-size:36px;
+  font-weight:900;
+  letter-spacing:3px;
+  color:#ffce38;
+  background:#080e19;
+  border:1px solid #ff9b25;
+  padding:14px 5px;
+  border-radius:12px;
+}
+
+.k-final{
+  text-align:center;
+  color:#75d5ff;
+  font-size:14px;
+  font-weight:bold;
+  padding:10px;
+}
+</style>
+
+<script>
+(function(){
+
+function agregarDescargaKraten(){
+
+const detalle=document.querySelector(
+  ".tarjeta.kraten section"
+);
+
+if(!detalle)return;
+
+if(detalle.querySelector(".kraten-descargas"))return;
+
+const bloque=document.createElement("div");
+bloque.className="kraten-descargas";
+
+bloque.innerHTML=`
+
+<h3>⬇ DESCARGA E INSTALACIÓN</h3>
+
+<div class="k-metodo">
+
+<svg class="k-dispositivo" viewBox="0 0 140 130">
+<defs>
+<linearGradient id="kCel" x2="1" y2="1">
+<stop stop-color="#79baff"/>
+<stop offset=".4" stop-color="#182c49"/>
+<stop offset="1" stop-color="#020711"/>
+</linearGradient>
+</defs>
+<g transform="rotate(10 70 65)">
+<rect x="35" y="4" width="70" height="122"
+rx="12" fill="url(#kCel)" stroke="#b5d8ff"
+stroke-width="2"/>
+<rect x="40" y="12" width="60" height="104"
+rx="7" fill="#07172c"/>
+<image href="IMG-20261118-WA0160.jpg"
+x="45" y="25" width="50" height="50"/>
+<text x="70" y="88" fill="#48caff"
+font-size="12" text-anchor="middle"
+font-weight="bold">KRATEN</text>
+<text x="70" y="103" fill="#8edc43"
+font-size="10" text-anchor="middle">ANDROID</text>
+</g>
+</svg>
+
+<h4>DESCARGA EN CELULAR ANDROID</h4>
+
+<p>Apretando el siguiente botón podés
+descargar KRATEN TV directamente en tu
+celular Android.</p>
+
+<a class="k-descargar"
+href="https://aftv.news/5702599"
+target="_blank" rel="noopener noreferrer">
+⬇ DESCARGAR KRATEN TV
+</a>
+
+<div class="k-aviso">
+⚠️ Si Chrome muestra el aviso habitual
+de descarga de archivos APK, seleccioná
+<strong>Descargar de todas formas</strong>
+solo si verificaste que el archivo es confiable.
+Una vez descargado, apretá
+<strong>Abrir</strong> y luego
+<strong>Instalar</strong>.
+No ignores bloqueos de seguridad de Play Protect.
+</div>
+
+</div>
+
+<div class="k-metodo">
+
+<svg class="k-dispositivo" viewBox="0 0 160 120">
+<defs>
+<linearGradient id="kBox" x2="0" y2="1">
+<stop stop-color="#345477"/>
+<stop offset="1" stop-color="#050911"/>
+</linearGradient>
+</defs>
+<polygon points="12,48 42,25 135,25 150,48"
+fill="#243c5b" stroke="#68baff"/>
+<rect x="12" y="48" width="138" height="40"
+rx="8" fill="url(#kBox)" stroke="#268fff"/>
+<text x="81" y="73" fill="white"
+font-size="19" font-weight="bold"
+text-anchor="middle">TV BOX</text>
+<circle cx="136" cy="79" r="3" fill="#35aaff"/>
+<rect x="115" y="7" width="23" height="64"
+rx="5" fill="#111827" stroke="#8a9fb5"
+transform="rotate(15 126 39)"/>
+<circle cx="126" cy="22" r="5" fill="#65758b"/>
+<circle cx="126" cy="39" r="7" fill="#34475f"/>
+</svg>
+
+<h4>INSTALACIÓN EN TV BOX</h4>
+
+<ol>
+<li>Abrí el navegador de tu TV Box
+(Chrome u otro navegador compatible).</li>
+
+<li>En la barra de direcciones escribí
+el siguiente enlace:</li>
+</ol>
+
+<div class="k-enlace">
+🌐 https://aftv.news/5702599
+</div>
+
+<button class="k-copiar"
+onclick="copiarKraten('https://aftv.news/5702599',this)">
+📋 COPIAR ENLACE
+</button>
+
+<ol start="3">
+<li>Presioná Enter y esperá la descarga.</li>
+<li>Abrí el archivo APK descargado.</li>
+<li>Seleccioná Instalar y luego Abrir.</li>
+</ol>
+
+</div>
+
+<div class="k-metodo">
+
+<img class="k-downloader"
+src="IMG-20260619-WA0070.jpg"
+alt="Downloader">
+
+<h4>INSTALACIÓN CON DOWNLOADER</h4>
+
+<p>Descargá y abrí la aplicación
+Downloader en tu dispositivo.</p>
+
+<p>Ingresá el siguiente código:</p>
+
+<div class="k-codigo">5702599</div>
+
+<button class="k-copiar"
+onclick="copiarKraten('5702599',this)">
+📋 COPIAR CÓDIGO
+</button>
+
+<p>Presioná <strong>GO</strong>,
+esperá la descarga y seleccioná
+<strong>Instalar</strong>.</p>
+
+</div>
+
+<div class="k-final">
+Ingresá con tu usuario y contraseña.<br><br>
+JONY DIGITAL<br>
+TU ENTRETENIMIENTO SIN LÍMITES
+</div>
+
+`;
+
+const guia=detalle.querySelector(".guia");
+
+if(guia){
+guia.replaceWith(bloque);
+}else{
+detalle.appendChild(bloque);
+}
+
+}
+
+window.copiarKraten=async function(valor,boton){
+try{
+await navigator.clipboard.writeText(valor);
+const anterior=boton.textContent;
+boton.textContent="✓ COPIADO";
+setTimeout(()=>{
+boton.textContent=anterior;
+},2000);
+}catch(error){
+window.prompt("Copiá el siguiente dato:",valor);
+}
+};
+
+if(document.readyState==="loading"){
+document.addEventListener(
+"DOMContentLoaded",agregarDescargaKraten
+);
+}else{
+agregarDescargaKraten();
+}
+
+})();
+</script>
