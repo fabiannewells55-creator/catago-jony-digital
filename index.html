@@ -49,41 +49,64 @@ padding:18px;
 box-shadow:0 4px 20px #0008;
 }
 
-.kraten{--color:#35d8cf}
-.future{--color:#269bff}
-.argentum{--color:#bd65ff}
+.kraten{
+--color:#35d8cf;
+--logo-light:#cafffb;
+--logo-dark:#087d78;
+}
+
+.future{
+--color:#269bff;
+--logo-light:#d8efff;
+--logo-dark:#14539b;
+}
+
+.argentum{
+--color:#bd65ff;
+--logo-light:#f0ddff;
+--logo-dark:#6530a0;
+}
+
+/* LOGOS REDONDOS 3D */
 
 .logo-app{
 display:block;
-width:150px;
-height:150px;
+width:180px;
 max-width:100%;
-object-fit:contain;
-border-radius:20px;
-margin:0 auto 10px;
-filter:drop-shadow(0 5px 8px #0009);
+height:auto;
+aspect-ratio:1;
+object-fit:cover;
+border-radius:50%;
+margin:10px auto 18px;
+background:#050814;
+
+border:5px solid var(--color);
+border-top-color:var(--logo-light);
+border-bottom-color:var(--logo-dark);
+
+box-shadow:
+0 3px 0 var(--logo-dark),
+0 7px 0 #07101f,
+0 12px 18px #000b;
+
+animation:none;
+transition:none;
 }
 
 .logo-app[hidden]{
 display:none;
 }
 
-h2{
-color:var(--color);
-text-align:center;
-font-size:27px;
-}
-
 .logo-3d{
 display:block;
-margin:4px 0 18px;
-padding:10px 4px 14px;
+margin:8px 0 14px;
+padding:10px 4px;
 text-align:center;
 font-size:clamp(25px,4vw,34px);
 line-height:1.1;
 font-weight:1000;
 letter-spacing:1.5px;
-color:var(--logo-light);
+
 background:linear-gradient(
 180deg,
 #ffffff 0%,
@@ -91,29 +114,17 @@ var(--logo-light) 18%,
 var(--color) 52%,
 var(--logo-dark) 100%
 );
+
 -webkit-background-clip:text;
 background-clip:text;
 -webkit-text-fill-color:transparent;
+
 filter:
 drop-shadow(0 2px 0 var(--logo-dark))
 drop-shadow(0 4px 0 #07101f)
 drop-shadow(0 7px 5px #000b);
+
 text-transform:uppercase;
-}
-
-.kraten .logo-3d{
---logo-light:#cafffb;
---logo-dark:#087d78;
-}
-
-.future .logo-3d{
---logo-light:#d8efff;
---logo-dark:#14539b;
-}
-
-.argentum .logo-3d{
---logo-light:#f0ddff;
---logo-dark:#6530a0;
 }
 
 .pantallas{
@@ -122,18 +133,6 @@ background:#202d46;
 padding:12px;
 border-radius:10px;
 font-weight:bold;
-}
-
-.precio{
-font-size:35px;
-font-weight:bold;
-text-align:center;
-margin:20px 0 5px;
-}
-
-.mensual{
-text-align:center;
-color:#cbd5e1;
 }
 
 button{
@@ -159,6 +158,7 @@ background:#25183e;
 border:1px solid #bd65ff;
 border-radius:12px;
 padding:14px;
+margin-top:15px;
 line-height:1.8;
 }
 
@@ -201,6 +201,7 @@ max-width:550px;
 padding:15px;
 }
 }
+
 </style>
 </head>
 
@@ -232,7 +233,6 @@ const aplicaciones = [
 nombre:"KRATEN",
 clase:"kraten",
 logo:"IMG-20261118-WA0160.jpg",
-precio:"26.000",
 pantallas:3,
 fotos:["kraten1.png","kraten2.png"]
 },
@@ -240,7 +240,6 @@ fotos:["kraten1.png","kraten2.png"]
 nombre:"FUTURE TV",
 clase:"future",
 logo:"IMG-20261118-WA0142.jpg",
-precio:"25.000",
 pantallas:3,
 fotos:["future1.png","future2.png"]
 },
@@ -248,7 +247,6 @@ fotos:["future1.png","future2.png"]
 nombre:"ARGENTUM PRO",
 clase:"argentum",
 logo:"IMG-20261118-WA0161.jpg",
-precio:"25.000",
 pantallas:4,
 fotos:["argentum1.png","argentum2.png"],
 extra:true
@@ -284,9 +282,6 @@ onerror="this.hidden=true">
 <div class="pantallas">
 🖥️ ${app.pantallas} PANTALLAS
 </div>
-
-<div class="precio">$${app.precio}</div>
-<div class="mensual">POR MES</div>
 
 ${app.extra ? `
 <div class="beneficios">
@@ -336,50 +331,3 @@ document.getElementById("visor").showModal();
 </script>
 </body>
 </html>
-/* LOGOS REDONDOS PREMIUM 3D */
-
-.logo-app {
-    display: block;
-    width: 180px;
-    height: 180px;
-    max-width: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    margin: 8px auto 16px;
-    background: #050814;
-
-    border: 4px solid var(--color);
-
-    box-shadow:
-        0 -2px 3px #ffffff80,
-        0 4px 0 #08101e,
-        0 7px 0 #050814,
-        0 12px 18px #000a,
-        0 0 12px var(--color);
-
-    filter: none;
-    animation: none !important;
-    transition: none !important;
-}
-
-.logo-app[hidden] {
-    display: none;
-}
-
-/* OCULTAR PRECIOS */
-
-.precio,
-.mensual {
-    display: none !important;
-}
-
-/* AJUSTAR ESPACIADO */
-
-.logo-3d {
-    margin: 8px 0 12px;
-    padding: 8px 4px;
-}
-
-.beneficios {
-    margin-top: 15px;
-}
