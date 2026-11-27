@@ -1,13 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Jony Digital | Catálogo</title>
+<title>Jony Digital | Catálogo Premium</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+box-sizing:border-box;
+animation:none!important;
+transition:none!important;
+}
 
 body{
 margin:0;
@@ -19,7 +24,7 @@ min-height:100vh;
 
 header{
 text-align:center;
-padding:35px 15px;
+padding:15px 15px 0;
 }
 
 .cabecera{
@@ -27,132 +32,108 @@ display:block;
 width:100%;
 max-width:1300px;
 height:auto;
-margin:0 auto 20px;
-border-radius:15px;
+margin:auto;
+border-radius:18px;
+box-shadow:0 8px 25px #0009;
 }
-
-h1{
-font-size:clamp(32px,6vw,60px);
-margin:0;
-color:#54caff;
-text-shadow:0 3px 0 #145aa5;
-}
-
-header p{color:#cbd5e1}
 
 .catalogo{
 display:grid;
 grid-template-columns:repeat(3,minmax(0,1fr));
-gap:22px;
+align-items:start;
+gap:24px;
 max-width:1300px;
 margin:auto;
 padding:20px;
 }
 
 .tarjeta{
---color:#269bff;
-background:#10182c;
+min-width:0;
+background:linear-gradient(155deg,#24334e,#10182c 35%,#090f20);
 border:2px solid var(--color);
-border-radius:20px;
+border-top-color:var(--claro);
+border-radius:22px;
 padding:18px;
-box-shadow:0 4px 20px #0008;
+box-shadow:0 6px 0 var(--oscuro),0 12px 25px #0009,inset 0 1px 3px #ffffff30;
 }
 
 .kraten{
 --color:#35d8cf;
---logo-light:#cafffb;
---logo-dark:#087d78;
+--claro:#cafffb;
+--oscuro:#087d78;
 }
 
 .future{
 --color:#269bff;
---logo-light:#d8efff;
---logo-dark:#14539b;
+--claro:#d8efff;
+--oscuro:#14539b;
 }
 
 .argentum{
 --color:#bd65ff;
---logo-light:#f0ddff;
---logo-dark:#6530a0;
+--claro:#f0ddff;
+--oscuro:#6530a0;
 }
-
-/* LOGOS REDONDOS 3D */
 
 .logo-app{
 display:block;
 width:180px;
 max-width:100%;
-height:auto;
 aspect-ratio:1;
 object-fit:cover;
 border-radius:50%;
 margin:10px auto 18px;
-background:#050814;
 border:5px solid var(--color);
-border-top-color:var(--logo-light);
-border-bottom-color:var(--logo-dark);
-box-shadow:
-0 3px 0 var(--logo-dark),
-0 7px 0 #07101f,
-0 12px 18px #000b;
-animation:none;
-transition:none;
-}
-
-.logo-app[hidden]{
-display:none;
+border-top-color:var(--claro);
+border-bottom-color:var(--oscuro);
+box-shadow:0 5px 0 var(--oscuro),0 12px 20px #000b;
 }
 
 .logo-3d{
-display:block;
-margin:8px 0 14px;
-padding:10px 4px;
 text-align:center;
 font-size:clamp(25px,4vw,34px);
-line-height:1.1;
 font-weight:1000;
 letter-spacing:1.5px;
-background:linear-gradient(
-180deg,
-#ffffff 0%,
-var(--logo-light) 18%,
-var(--color) 52%,
-var(--logo-dark) 100%
-);
+margin:15px 0;
+background:linear-gradient(180deg,#fff,var(--claro),var(--color),var(--oscuro));
 -webkit-background-clip:text;
 background-clip:text;
 -webkit-text-fill-color:transparent;
-filter:
-drop-shadow(0 2px 0 var(--logo-dark))
-drop-shadow(0 4px 0 #07101f)
-drop-shadow(0 7px 5px #000b);
-text-transform:uppercase;
+filter:drop-shadow(0 3px 0 var(--oscuro)) drop-shadow(0 5px 4px #000);
 }
 
 .pantallas{
 text-align:center;
-background:#202d46;
-padding:12px;
-border-radius:10px;
+background:linear-gradient(#30405c,#152037);
+padding:14px;
+border-radius:12px;
 font-weight:bold;
+border:1px solid #ffffff25;
+box-shadow:0 4px 0 #070c18;
 }
 
 button{
 width:100%;
-padding:14px;
+padding:15px;
 margin-top:18px;
 border:0;
 border-radius:12px;
-background:var(--color,#54caff);
+background:linear-gradient(180deg,var(--claro,#d8efff),var(--color,#54caff));
 color:#080e1b;
 font-size:17px;
 font-weight:bold;
 cursor:pointer;
+box-shadow:0 4px 0 var(--oscuro,#14539b),0 7px 12px #0008;
 }
 
 .contenido{
 line-height:1.8;
 font-size:15px;
+}
+
+.contenido div{
+padding:8px 4px;
+border-bottom:1px solid #ffffff12;
 }
 
 .beneficios{
@@ -167,17 +148,71 @@ line-height:1.8;
 .galeria{
 display:grid;
 gap:12px;
-margin-top:15px;
+margin-top:22px;
 }
 
 .galeria img{
 width:100%;
-border-radius:10px;
+border-radius:12px;
+border:1px solid var(--color);
 cursor:zoom-in;
 }
 
+h3{
+color:var(--color,#54caff);
+text-align:center;
+}
+
+video{
+display:block;
+width:100%;
+max-width:100%;
+border-radius:12px;
+border:1px solid var(--color);
+background:#000;
+}
+
+.guia{
+margin-top:22px;
+padding:15px;
+background:#080f20;
+border:1px solid var(--color);
+border-radius:16px;
+box-shadow:0 5px 15px #0008;
+line-height:1.7;
+}
+
+.downloader{
+display:block;
+width:180px;
+max-width:100%;
+margin:15px auto;
+border-radius:14px;
+}
+
+.codigo{
+display:block;
+text-align:center;
+font-size:clamp(26px,7vw,38px);
+font-weight:900;
+letter-spacing:2px;
+color:var(--claro);
+background:linear-gradient(#24334e,#10182c);
+border:2px solid var(--color);
+border-radius:14px;
+padding:15px 4px;
+box-shadow:0 4px 0 var(--oscuro),inset 0 3px 8px #0008;
+}
+
+.guia-final{
+text-align:center;
+color:var(--color);
+font-weight:bold;
+margin-top:20px;
+}
+
 .aviso{
-padding:25px 10px;
+padding:30px 10px;
 text-align:center;
 color:#94a3b8;
 }
@@ -190,10 +225,18 @@ border-radius:15px;
 max-width:95vw;
 }
 
+dialog::backdrop{
+background:#000c;
+}
+
 dialog img{
 max-width:85vw;
 max-height:75vh;
 object-fit:contain;
+}
+
+[hidden]{
+display:none!important;
 }
 
 @media(max-width:850px){
@@ -201,30 +244,24 @@ object-fit:contain;
 grid-template-columns:1fr;
 max-width:550px;
 padding:15px;
+gap:25px;
 }
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
 <img class="cabecera"
-src="cabecera-jony-1.jpg"
-alt="Jony Digital">
-
-<h1>JONY DIGITAL</h1>
-<p>TU ENTRETENIMIENTO SIN LÍMITES</p>
-<h3>Elegí tu aplicación favorita</h3>
-
+src="file_000000003aa8820e95527cb3b5f5e525.png"
+alt="Jony Digital - Tu entretenimiento sin límites">
 </header>
 
 <main class="catalogo" id="catalogo"></main>
 
 <footer class="aviso">
-Jony Digital · Catálogo de aplicaciones
+JONY DIGITAL · TU ENTRETENIMIENTO SIN LÍMITES
 </footer>
 
 <dialog id="visor">
@@ -236,20 +273,24 @@ Cerrar
 
 <script>
 
-const aplicaciones = [
+const aplicaciones=[
 {
 nombre:"KRATEN",
 clase:"kraten",
 logo:"IMG-20261118-WA0160.jpg",
 pantallas:3,
-fotos:["kraten1.png","kraten2.png"]
+fotos:["kraten1.png","kraten2.png"],
+video:"VID-20261011-WA0025.mp4",
+codigo:"5702599"
 },
 {
 nombre:"FUTURE TV",
 clase:"future",
 logo:"IMG-20261118-WA0142.jpg",
 pantallas:3,
-fotos:["future1.png","future2.png"]
+fotos:["future1.png","future2.png"],
+video:"VID-20260710-WA0147.mp4",
+codigo:"2820647"
 },
 {
 nombre:"ARGENTUM PRO",
@@ -257,11 +298,12 @@ clase:"argentum",
 logo:"IMG-20261118-WA0161.jpg",
 pantallas:4,
 fotos:["argentum1.png","argentum2.png"],
+codigo:"4708062",
 extra:true
 }
 ];
 
-const contenidos = [
+const contenidos=[
 "📺 Canales en vivo",
 "🏆 Eventos deportivos",
 "⚽ Pack Fútbol",
@@ -275,7 +317,7 @@ const contenidos = [
 "🔞 Canales para adultos (+18)"
 ];
 
-document.getElementById("catalogo").innerHTML =
+document.getElementById("catalogo").innerHTML=
 aplicaciones.map((app,i)=>`
 
 <article class="tarjeta ${app.clase}">
@@ -291,12 +333,12 @@ onerror="this.hidden=true">
 🖥️ ${app.pantallas} PANTALLAS
 </div>
 
-${app.extra ? `
+${app.extra?`
 <div class="beneficios">
 <strong>BENEFICIOS ADICIONALES</strong><br>
 🎵 Spotify<br>
 ▶️ YouTube Premium
-</div>` : ""}
+</div>`:""}
 
 <button onclick="verDetalles(${i},this)">
 Ver aplicación
@@ -304,21 +346,67 @@ Ver aplicación
 
 <section id="detalle${i}" hidden>
 
+<h3>📸 Imágenes de la aplicación</h3>
+
 <div class="galeria">
 ${app.fotos.map(foto=>`
 <img src="${foto}"
 alt="${app.nombre}"
+loading="lazy"
 onclick="ampliar(this.src)"
 onerror="this.hidden=true">
 `).join("")}
 </div>
 
-<h3>Contenidos incluidos</h3>
+${app.video?`
+
+<h3>🎬 Video de presentación</h3>
+
+<video controls playsinline preload="none"
+poster="${app.fotos[0]}">
+<source src="${app.video}" type="video/mp4">
+Tu navegador no admite este video.
+</video>
+
+`:""}
+
+<h3>⭐ Contenidos incluidos</h3>
 
 <div class="contenido">
 ${contenidos.map(c=>`<div>${c}</div>`).join("")}
 </div>
 
+<div class="guia">
+
+<h3>📥 CÓMO DESCARGAR E INSTALAR</h3>
+
+<p>📺 <strong>PASO 1:</strong><br>
+Contar con un televisor con sistema Android TV.</p>
+
+<p>📲 <strong>PASO 2:</strong><br>
+Descargar Downloader desde la tienda de aplicaciones.</p>
+
+<img class="downloader"
+src="IMG-20260619-WA0070.jpg"
+alt="Downloader"
+loading="lazy">
+
+<p>🔢 <strong>PASO 3:</strong><br>
+Abrir Downloader e ingresar el siguiente código:</p>
+
+<div class="codigo">${app.codigo}</div>
+
+<p>⬇️ <strong>PASO 4:</strong><br>
+Descargar e instalar la aplicación.</p>
+
+<p>🔑 <strong>PASO 5:</strong><br>
+Ingresar con el usuario y la contraseña proporcionados por el vendedor.</p>
+
+<div class="guia-final">
+🍿 ¡YA PODÉS DISFRUTAR DE TU ENTRETENIMIENTO!
+</div>
+
+</div>
 </section>
 </article>
 
@@ -326,9 +414,16 @@ ${contenidos.map(c=>`<div>${c}</div>`).join("")}
 
 function verDetalles(i,boton){
 const detalle=document.getElementById("detalle"+i);
+
 detalle.hidden=!detalle.hidden;
+
+if(detalle.hidden){
+detalle.querySelectorAll("video").forEach(v=>v.pause());
+}
+
 boton.textContent=detalle.hidden
-?"Ver aplicación":"Ocultar detalles";
+?"Ver aplicación"
+:"Ocultar detalles";
 }
 
 function ampliar(src){
@@ -339,76 +434,3 @@ document.getElementById("visor").showModal();
 </script>
 </body>
 </html>
-<style>
-.guia-instalacion{
-max-width:1260px;
-margin:15px auto;
-width:calc(100% - 30px);
-padding:22px;
-background:#10182c;
-border:2px solid #54caff;
-border-radius:20px;
-box-shadow:0 4px 20px #0008;
-color:white;
-line-height:1.8;
-}
-
-.guia-instalacion h2{
-color:#54caff;
-text-align:center;
-font-size:23px;
-margin:0 0 18px;
-}
-
-.guia-instalacion p{
-margin:12px 0;
-}
-
-.guia-final{
-text-align:center;
-color:#54caff;
-font-weight:bold;
-margin-top:20px;
-}
-</style>
-
-<section id="guiaInstalacion" class="guia-instalacion">
-
-<h2>📥 CÓMO DESCARGAR E INSTALAR</h2>
-
-<p>📺 <strong>PASO 1:</strong> Contar con un televisor con sistema Android TV.</p>
-
-<p>📲 <strong>PASO 2:</strong> Descargar la aplicación Downloader desde la tienda de aplicaciones.</p>
-
-<p>🔢 <strong>PASO 3:</strong> Solicitar al vendedor el código de descarga de la aplicación elegida.</p>
-
-<p>⬇️ <strong>PASO 4:</strong> Ingresar el código en Downloader, descargar e instalar la aplicación.</p>
-
-<p>🔑 <strong>PASO 5:</strong> Ingresar con el usuario y la contraseña proporcionados por el vendedor.</p>
-
-<div class="guia-final">
-🍿 ¡YA PODÉS DISFRUTAR DE TU ENTRETENIMIENTO!
-</div>
-
-</section>
-
-<script>
-document.getElementById("catalogo").before(
-document.getElementById("guiaInstalacion")
-);
-</script>
-<style>
-header > h1,
-header > p,
-header > h3{
-display:none !important;
-}
-
-header{
-padding:15px 15px 0 !important;
-}
-
-header .cabecera{
-margin-bottom:0 !important;
-}
-</style>
