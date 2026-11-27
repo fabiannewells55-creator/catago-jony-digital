@@ -432,5 +432,65 @@ document.getElementById("visor").showModal();
 }
 
 </script>
+
+<style>
+.downloader-captura{
+position:relative;
+width:100%;
+margin:18px auto;
+overflow:hidden;
+border-radius:12px;
+}
+
+.downloader-captura img{
+display:block;
+width:100%;
+height:auto;
+}
+
+.downloader-numero{
+position:absolute;
+top:36%;
+left:7%;
+width:86%;
+height:25%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#fff;
+color:#111;
+border-radius:8px;
+font-size:clamp(16px,4vw,30px);
+font-weight:900;
+letter-spacing:2px;
+}
+</style>
+
+<script>
+document.querySelectorAll(".tarjeta").forEach(tarjeta=>{
+
+const nombre=tarjeta.querySelector(".logo-3d").textContent.trim();
+const guia=tarjeta.querySelector(".guia");
+
+if(!guia)return;
+
+guia.querySelector("h3").textContent=
+"📥 CÓMO INSTALAR "+nombre;
+
+const codigo=guia.querySelector(".codigo");
+
+if(!codigo)return;
+
+const numero=codigo.textContent.trim();
+
+codigo.outerHTML=`
+<div class="downloader-captura">
+<img src="Screenshot_20261126_232136_Downloader.jpg"
+alt="Pantalla de Downloader">
+<div class="downloader-numero">${numero}</div>
+</div>
+`;
+});
+</script>
 </body>
 </html>
