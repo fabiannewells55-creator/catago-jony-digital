@@ -1343,3 +1343,52 @@ window.addEventListener(
 
 })();
 </script>
+<style>
+#future-descargas .dibujo img {
+  display: block;
+  width: 150px;
+  max-width: 100%;
+  height: 130px;
+  object-fit: contain;
+  margin: 10px auto;
+  border-radius: 12px;
+}
+</style>
+
+<script>
+window.addEventListener("load", function(){
+
+  const kraten = document.querySelector(".kraten");
+  const future = document.querySelector("#future-descargas");
+
+  if (!kraten || !future) return;
+
+  const imagenes = Array.from(
+    kraten.querySelectorAll("img")
+  );
+
+  const celular = imagenes.find(img =>
+    /celular|android-phone|smartphone|telefono/i
+    .test(img.src + " " + img.alt)
+  );
+
+  const tvbox = imagenes.find(img =>
+    /tv[-_ ]?box/i.test(img.src + " " + img.alt)
+  );
+
+  const dibujos = future.querySelectorAll(".dibujo");
+
+  if (celular && dibujos[0]) {
+    dibujos[0].replaceChildren(
+      celular.cloneNode(true)
+    );
+  }
+
+  if (tvbox && dibujos[1]) {
+    dibujos[1].replaceChildren(
+      tvbox.cloneNode(true)
+    );
+  }
+
+});
+</script>
