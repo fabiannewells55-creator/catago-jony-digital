@@ -2307,3 +2307,111 @@ document.getElementById('catalogo').after(s);
   transition: none !important;
 }
 </style>
+<style>
+.jony-pin-adultos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 9px 12px;
+  margin: 8px 0;
+  background: linear-gradient(
+    145deg, #202938, #080e1b
+  );
+  border: 1px solid #b99140;
+  border-radius: 10px;
+  box-shadow: 0 3px 0 #080b12;
+  color: #e7c56c;
+  font-size: 13px;
+  font-weight: bold;
+  animation: none !important;
+  transition: none !important;
+}
+.jony-pin-adultos .candado {
+  font-size: 23px;
+  filter: drop-shadow(
+    0 2px 2px #000
+  );
+}
+.jony-pin-adultos strong {
+  color: #fff !important;
+  font-size: 21px;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 3px #000;
+}
+</style>
+
+<script>
+(() => {
+  function agregarCodigos() {
+    const apps = {
+      kraten: "6969",
+      future: "6969",
+      argentum: "0000"
+    };
+
+    Object.entries(apps).forEach(
+      ([app, codigo]) => {
+        document.querySelectorAll(
+          ".tarjeta." + app
+        ).forEach(tarjeta => {
+          if (tarjeta.querySelector(
+            ".jony-pin-adultos"
+          )) return;
+
+          const elementos = [
+            ...tarjeta.querySelectorAll("*")
+          ];
+
+          const texto = elementos.find(el =>
+            /canales\s+adultos/i.test(
+              el.textContent
+            ) &&
+            ![...el.children].some(hijo =>
+              /canales\s+adultos/i.test(
+                hijo.textContent
+              )
+            )
+          );
+
+          if (!texto) return;
+
+          const fila = texto.closest("li")
+            || texto.closest("p")
+            || texto.closest("div")
+            || texto;
+
+          const bloque =
+            document.createElement("div");
+
+          bloque.className =
+            "jony-pin-adultos";
+
+          bloque.innerHTML = `
+            <span class="candado">🔒</span>
+            <span>Código de acceso</span>
+            <strong>${codigo}</strong>
+          `;
+
+          fila.insertAdjacentElement(
+            "afterend", bloque
+          );
+        });
+      }
+    );
+  }
+
+  agregarCodigos();
+
+  document.addEventListener(
+    "DOMContentLoaded", agregarCodigos
+  );
+
+  new MutationObserver(agregarCodigos)
+    .observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+})();
+</script>
