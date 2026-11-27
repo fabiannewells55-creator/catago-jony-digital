@@ -1392,3 +1392,57 @@ window.addEventListener("load", function(){
 
 });
 </script>
+<script>
+(function(){
+
+function corregirFuture(){
+
+const kraten = document.querySelector(".tarjeta.kraten");
+const future = document.querySelector(".tarjeta.future");
+
+if(!kraten || !future) return;
+
+const original = kraten.querySelector(".kraten-descargas");
+const detalle = future.querySelector("#detalle1");
+
+if(!original || !detalle) return;
+
+future.querySelectorAll(
+"#future-descargas, #descarga-future, .kraten-descargas, .guia"
+).forEach(el => el.remove());
+
+const copia = original.cloneNode(true);
+
+copia.id = "future-descargas-final";
+
+copia.innerHTML = copia.innerHTML
+.replace(/KRATEN TV/gi, "FUTURE TV")
+.replace(/>KRATEN</gi, ">FUTURE TV<")
+.replace(/IMG-20261118-WA0160.jpg/g,
+"IMG-20261118-WA0142.jpg")
+.replace(/https?:\/\/aftv\.news\/5702599/g,
+"http://aftv.news/9319730")
+.replace(/5702599/g, "2820647")
+.replace(/id="kCel"/g, 'id="fCel"')
+.replace(/url\(#kCel\)/g, "url(#fCel)")
+.replace(/id="kBox"/g, 'id="fBox"')
+.replace(/url\(#kBox\)/g, "url(#fBox)");
+
+const contacto = future.querySelector(".contactar-whatsapp");
+
+detalle.appendChild(copia);
+
+if(contacto){
+detalle.appendChild(contacto);
+}
+
+}
+
+if(document.readyState === "complete"){
+corregirFuture();
+}else{
+window.addEventListener("load", corregirFuture);
+}
+
+})();
+</script>
