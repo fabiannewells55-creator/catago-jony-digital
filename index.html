@@ -8,6 +8,7 @@
 
 <style>
 *{box-sizing:border-box}
+
 body{
 margin:0;
 font-family:Arial,sans-serif;
@@ -15,17 +16,21 @@ background:linear-gradient(145deg,#050814,#101c39);
 color:white;
 min-height:100vh;
 }
+
 header{
 text-align:center;
 padding:35px 15px;
 }
+
 h1{
 font-size:clamp(32px,6vw,60px);
 margin:0;
 color:#54caff;
 text-shadow:0 3px 0 #145aa5;
 }
+
 header p{color:#cbd5e1}
+
 .catalogo{
 display:grid;
 grid-template-columns:repeat(3,minmax(0,1fr));
@@ -34,6 +39,7 @@ max-width:1300px;
 margin:auto;
 padding:20px;
 }
+
 .tarjeta{
 --color:#269bff;
 background:#10182c;
@@ -42,9 +48,19 @@ border-radius:20px;
 padding:18px;
 box-shadow:0 4px 20px #0008;
 }
+
 .kraten{--color:#35d8cf}
 .future{--color:#269bff}
 .argentum{--color:#bd65ff}
+
+.logo-app{
+display:block;
+width:100%;
+height:150px;
+object-fit:contain;
+margin:0 auto 10px;
+filter:drop-shadow(0 5px 8px #0009);
+}
 
 h2{
 color:var(--color);
@@ -83,10 +99,12 @@ text-transform:uppercase;
 --logo-light:#cafffb;
 --logo-dark:#087d78;
 }
+
 .future .logo-3d{
 --logo-light:#d8efff;
 --logo-dark:#14539b;
 }
+
 .argentum .logo-3d{
 --logo-light:#f0ddff;
 --logo-dark:#6530a0;
@@ -99,32 +117,37 @@ padding:12px;
 border-radius:10px;
 font-weight:bold;
 }
+
 .precio{
 font-size:35px;
 font-weight:bold;
 text-align:center;
 margin:20px 0 5px;
 }
+
 .mensual{
 text-align:center;
 color:#cbd5e1;
 }
+
 button{
 width:100%;
 padding:14px;
 margin-top:18px;
 border:0;
 border-radius:12px;
-background:var(--color);
+background:var(--color,#54caff);
 color:#080e1b;
 font-size:17px;
 font-weight:bold;
 cursor:pointer;
 }
+
 .contenido{
 line-height:1.8;
 font-size:15px;
 }
+
 .beneficios{
 background:#25183e;
 border:1px solid #bd65ff;
@@ -132,21 +155,25 @@ border-radius:12px;
 padding:14px;
 line-height:1.8;
 }
+
 .galeria{
 display:grid;
 gap:12px;
 margin-top:15px;
 }
+
 .galeria img{
 width:100%;
 border-radius:10px;
 cursor:zoom-in;
 }
+
 .aviso{
 padding:25px 10px;
 text-align:center;
 color:#94a3b8;
 }
+
 dialog{
 background:#10182c;
 color:white;
@@ -154,11 +181,13 @@ border:1px solid #54caff;
 border-radius:15px;
 max-width:95vw;
 }
+
 dialog img{
 max-width:85vw;
 max-height:75vh;
 object-fit:contain;
 }
+
 @media(max-width:850px){
 .catalogo{
 grid-template-columns:1fr;
@@ -191,10 +220,12 @@ Cerrar
 </dialog>
 
 <script>
+
 const aplicaciones = [
 {
 nombre:"KRATEN",
 clase:"kraten",
+logo:"kraten-logo.png",
 precio:"26.000",
 pantallas:3,
 fotos:["kraten1.png","kraten2.png"]
@@ -202,6 +233,7 @@ fotos:["kraten1.png","kraten2.png"]
 {
 nombre:"FUTURE TV",
 clase:"future",
+logo:"future-logo.png",
 precio:"25.000",
 pantallas:3,
 fotos:["future1.png","future2.png"]
@@ -209,6 +241,7 @@ fotos:["future1.png","future2.png"]
 {
 nombre:"ARGENTUM PRO",
 clase:"argentum",
+logo:"argentum-logo.png",
 precio:"25.000",
 pantallas:4,
 fotos:["argentum1.png","argentum2.png"],
@@ -232,7 +265,13 @@ const contenidos = [
 
 document.getElementById("catalogo").innerHTML =
 aplicaciones.map((app,i)=>`
+
 <article class="tarjeta ${app.clase}">
+
+<img class="logo-app"
+src="${app.logo}"
+alt="Logo ${app.nombre}">
+
 <h2 class="logo-3d">${app.nombre}</h2>
 
 <div class="pantallas">
@@ -272,6 +311,7 @@ ${contenidos.map(c=>`<div>${c}</div>`).join("")}
 
 </section>
 </article>
+
 `).join("");
 
 function verDetalles(i,boton){
@@ -285,7 +325,7 @@ function ampliar(src){
 document.getElementById("fotoGrande").src=src;
 document.getElementById("visor").showModal();
 }
-</script>
 
+</script>
 </body>
 </html>
