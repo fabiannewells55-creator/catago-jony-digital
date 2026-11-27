@@ -2154,3 +2154,111 @@ document.getElementById('catalogo').after(s);
   transition: none !important;
 }
 </style>
+<style>
+.tarjeta.future .logo-premium-marco {
+  position: relative;
+  isolation: isolate;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #142c50 !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+.tarjeta.future .logo-premium-marco::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--cine-future) center / cover no-repeat;
+  opacity: 1 !important;
+  animation: none !important;
+  transition: none !important;
+}
+</style>
+
+<script>
+(() => {
+  const marco = document.querySelector(
+    ".tarjeta.future .logo-premium-marco"
+  );
+
+  if (!marco) return;
+
+  let butacas = "";
+
+  for (let fila = 0; fila < 4; fila++) {
+    const escala = 0.65 + fila * 0.23;
+
+    for (let i = -5; i <= 5; i++) {
+      if (i === 0) continue;
+
+      const x = 400 + i * 76 * escala;
+      const y = 245 + fila * 49;
+
+      butacas += `
+        <g transform="translate(${x} ${y})
+          scale(${escala})">
+          <rect x="-32" y="-25"
+            width="64" height="58" rx="13"
+            fill="url(#rojo)" stroke="#e96b70"/>
+          <rect x="-36" y="15"
+            width="72" height="25" rx="8"
+            fill="#a91930"/>
+          <rect x="-40" y="0"
+            width="12" height="35" rx="5"
+            fill="#301019"/>
+          <rect x="28" y="0"
+            width="12" height="35" rx="5"
+            fill="#301019"/>
+        </g>`;
+    }
+  }
+
+  const cine = `
+  <svg xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 800 440">
+    <defs>
+      <linearGradient id="azul" x2="0" y2="1">
+        <stop stop-color="#3978bb"/>
+        <stop offset="1" stop-color="#101c36"/>
+      </linearGradient>
+
+      <linearGradient id="rojo" x2="0" y2="1">
+        <stop stop-color="#ef5961"/>
+        <stop offset=".45" stop-color="#ad1831"/>
+        <stop offset="1" stop-color="#510b20"/>
+      </linearGradient>
+
+      <radialGradient id="pantalla">
+        <stop stop-color="#ffffff"/>
+        <stop offset="1" stop-color="#70bfff"/>
+      </radialGradient>
+    </defs>
+
+    <rect width="800" height="440"
+          fill="url(#azul)"/>
+
+    <path d="M0 0L170 80V210L0 440Z"
+          fill="#193b65"/>
+    <path d="M800 0L630 80V210L800 440Z"
+          fill="#193b65"/>
+
+    <rect x="170" y="35" width="460"
+          height="180" rx="8"
+          fill="url(#pantalla)"
+          stroke="#9bdcff" stroke-width="5"/>
+
+    <path d="M30 50V220 M770 50V220"
+          stroke="#65baff" stroke-width="8"/>
+
+    ${butacas}
+  </svg>`;
+
+  marco.style.setProperty(
+    "--cine-future",
+    'url("data:image/svg+xml,' +
+    encodeURIComponent(cine) + '")'
+  );
+})();
+</script>
