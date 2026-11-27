@@ -2415,3 +2415,76 @@ document.getElementById('catalogo').after(s);
     });
 })();
 </script>
+<script>
+(() => {
+  function corregirCodigosAdultos() {
+    const apps = {
+      kraten: "6969",
+      future: "6969",
+      argentum: "0000"
+    };
+
+    const buscar =
+      /canales\s+(?:para\s+)?adultos/i;
+
+    Object.entries(apps).forEach(
+      ([app, codigo]) => {
+        document.querySelectorAll(
+          ".tarjeta." + app
+        ).forEach(tarjeta => {
+
+          if (tarjeta.querySelector(
+            ".jony-pin-adultos"
+          )) return;
+
+          const texto = [
+            ...tarjeta.querySelectorAll("*")
+          ].find(el =>
+            buscar.test(el.textContent) &&
+            ![...el.children].some(hijo =>
+              buscar.test(hijo.textContent)
+            )
+          );
+
+          if (!texto) return;
+
+          const fila = texto.closest("li")
+            || texto.closest("p")
+            || texto.closest("div")
+            || texto;
+
+          const bloque =
+            document.createElement("div");
+
+          bloque.className =
+            "jony-pin-adultos";
+
+          bloque.innerHTML = `
+            <span class="candado">🔒</span>
+            <span>Código de acceso</span>
+            <strong>${codigo}</strong>
+          `;
+
+          fila.insertAdjacentElement(
+            "afterend", bloque
+          );
+        });
+      }
+    );
+  }
+
+  corregirCodigosAdultos();
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    corregirCodigosAdultos
+  );
+
+  new MutationObserver(
+    corregirCodigosAdultos
+  ).observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+})();
+</script>
