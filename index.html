@@ -1225,3 +1225,121 @@ agregarDescargaKraten();
   }
 })();
 </script>
+<style>
+#future-descargas {
+  margin: 18px 0;
+  padding: 14px;
+  background: #0c1425;
+  border: 1px solid #3498db;
+  border-radius: 16px;
+  color: #e3efff;
+}
+#future-descargas h3 {
+  background: linear-gradient(135deg,#174c82,#17243b);
+  border: 1px solid #54baff;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  font-size: 18px;
+  color: #e3efff;
+}
+#future-descargas .equipo {
+  background: #19263b;
+  border-left: 3px solid #3498db;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px 0;
+  line-height: 1.8;
+}
+#future-descargas .dibujo {
+  font-size: 48px;
+  text-align: center;
+}
+#future-descargas .enlace {
+  display: block;
+  padding: 14px 8px;
+  margin: 12px 0;
+  background: #174c82;
+  border: 1px solid #54baff;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+</style>
+
+<script>
+(function(){
+
+function agregarFuture(){
+
+  const tarjeta = document.querySelector(".future");
+
+  if (!tarjeta) return;
+
+  if (document.getElementById("future-descargas")) return;
+
+  const bloque = document.createElement("section");
+
+  bloque.id = "future-descargas";
+
+  bloque.innerHTML = `
+    <h3>📥 OTRAS FORMAS DE DESCARGA</h3>
+
+    <div class="equipo">
+      <div class="dibujo">📱</div>
+
+      <h4>DESCARGA PARA CELULAR ANDROID</h4>
+
+      <p>1. Presioná el siguiente enlace para descargar Future TV.</p>
+
+      <a class="enlace"
+         href="http://aftv.news/9319730"
+         target="_blank"
+         rel="noopener">
+         📥 DESCARGAR FUTURE TV
+      </a>
+
+      <p>2. Si aparece una advertencia, verificá que el archivo sea el correcto antes de continuar.</p>
+
+      <p>3. Una vez descargado, presioná INSTALAR.</p>
+    </div>
+
+    <div class="equipo">
+      <div class="dibujo">📺</div>
+
+      <h4>DESCARGA PARA TV BOX</h4>
+
+      <p>1. Abrí el navegador de internet de tu TV Box.</p>
+
+      <p>2. Escribí el siguiente enlace en la barra del navegador:</p>
+
+      <div class="enlace">
+        http://aftv.news/9319730
+      </div>
+
+      <p>3. Presioná ENTER o IR.</p>
+
+      <p>4. Descargá la aplicación.</p>
+
+      <p>5. Presioná INSTALAR.</p>
+    </div>
+  `;
+
+  tarjeta.appendChild(bloque);
+}
+
+agregarFuture();
+
+document.addEventListener(
+  "DOMContentLoaded", agregarFuture
+);
+
+window.addEventListener(
+  "load", agregarFuture
+);
+
+})();
+</script>
