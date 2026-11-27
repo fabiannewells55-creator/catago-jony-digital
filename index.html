@@ -22,6 +22,15 @@ text-align:center;
 padding:35px 15px;
 }
 
+.cabecera{
+display:block;
+width:100%;
+max-width:1300px;
+height:auto;
+margin:0 auto 20px;
+border-radius:15px;
+}
+
 h1{
 font-size:clamp(32px,6vw,60px);
 margin:0;
@@ -79,16 +88,13 @@ object-fit:cover;
 border-radius:50%;
 margin:10px auto 18px;
 background:#050814;
-
 border:5px solid var(--color);
 border-top-color:var(--logo-light);
 border-bottom-color:var(--logo-dark);
-
 box-shadow:
 0 3px 0 var(--logo-dark),
 0 7px 0 #07101f,
 0 12px 18px #000b;
-
 animation:none;
 transition:none;
 }
@@ -106,7 +112,6 @@ font-size:clamp(25px,4vw,34px);
 line-height:1.1;
 font-weight:1000;
 letter-spacing:1.5px;
-
 background:linear-gradient(
 180deg,
 #ffffff 0%,
@@ -114,16 +119,13 @@ var(--logo-light) 18%,
 var(--color) 52%,
 var(--logo-dark) 100%
 );
-
 -webkit-background-clip:text;
 background-clip:text;
 -webkit-text-fill-color:transparent;
-
 filter:
 drop-shadow(0 2px 0 var(--logo-dark))
 drop-shadow(0 4px 0 #07101f)
 drop-shadow(0 7px 5px #000b);
-
 text-transform:uppercase;
 }
 
@@ -208,9 +210,15 @@ padding:15px;
 <body>
 
 <header>
+
+<img class="cabecera"
+src="cabecera-jony-1.jpg"
+alt="Jony Digital">
+
 <h1>JONY DIGITAL</h1>
 <p>TU ENTRETENIMIENTO SIN LÍMITES</p>
 <h3>Elegí tu aplicación favorita</h3>
+
 </header>
 
 <main class="catalogo" id="catalogo"></main>
