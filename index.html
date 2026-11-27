@@ -2120,3 +2120,37 @@ document.getElementById('catalogo').after(s);
 }
 
 </style>
+<style>
+/* FUTURE TV - CINE MÁS CLARO */
+#catalogo .tarjeta.future {
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(0,15,45,.05),
+      rgba(0,15,35,.15),
+      #080e1b
+    ),
+    url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=85")
+    !important;
+}
+
+/* ARGENTUM PRO - VIOLETA MÁS SUAVE */
+#catalogo .tarjeta.argentum {
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(65,0,100,.15),
+      rgba(35,0,65,.25),
+      #080e1b
+    ),
+    url("https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=900&q=85")
+    !important;
+}
+
+/* SIN ANIMACIONES NI PARPADEOS */
+#catalogo .tarjeta,
+#catalogo .tarjeta * {
+  animation: none !important;
+  transition: none !important;
+}
+</style>
