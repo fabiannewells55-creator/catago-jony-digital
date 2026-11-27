@@ -1884,3 +1884,175 @@ function contactarSoporteJony() {
   }
 }
 </script>
+<style>
+#soluciones-jony {
+  width:calc(100% - 30px);
+  border:0;
+  background:transparent;
+  padding:0;
+}
+
+#soluciones-jony::before {
+  content:"";
+  display:block;
+  height:5px;
+  border-radius:8px;
+  background:linear-gradient(
+    #ffd49a,#ff8500,#843000
+  );
+  box-shadow:0 3px 4px #000;
+  margin-bottom:15px;
+}
+
+#soluciones-jony .sj-titulo {
+  width:100%;
+  margin:0;
+  border:1px solid #ffc477;
+  background:linear-gradient(
+    #ffb94f,#f77a00 48%,#bd4200
+  );
+  box-shadow:
+    0 6px 0 #783000,
+    0 10px 14px #0009,
+    inset 0 2px 2px #ffffff70;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  padding:15px 12px;
+}
+
+#soluciones-jony .sj-panel {
+  padding:10px;
+  background:linear-gradient(
+    145deg,#181e26,#080b10
+  );
+  border:1px solid #555;
+  border-radius:14px;
+  margin-top:15px;
+}
+
+#soluciones-jony .sj-icono {
+  width:29px;
+  height:29px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(
+    #465366,#101720
+  );
+  border:1px solid #8794a5;
+  border-radius:7px;
+  box-shadow:0 3px 0 #05080d;
+}
+
+#soluciones-jony .sj-icono svg {
+  width:23px;
+  height:23px;
+  filter:drop-shadow(0 2px 1px #000);
+}
+
+#soluciones-jony h3 {
+  text-align:left;
+}
+
+#soluciones-jony p {
+  font-weight:500;
+  color:#fff;
+}
+
+#soluciones-jony .sj-numero {
+  font-size:13px;
+  padding:5px;
+}
+
+#soluciones-jony,
+#soluciones-jony * {
+  animation:none!important;
+  transition:none!important;
+}
+</style>
+
+<script>
+(()=>{
+const s=document.getElementById(
+  'soluciones-jony'
+);
+
+if(!s||s.querySelector('.sj-panel'))return;
+
+const old=s.querySelector('.sj-titulo');
+const b=document.createElement('button');
+
+b.type='button';
+b.className='sj-titulo';
+
+b.setAttribute('aria-expanded','false');
+b.setAttribute('aria-controls','sj-panel');
+
+b.innerHTML=`
+<span>🛠 SOLUCIONES RÁPIDAS</span>
+<span aria-hidden="true">▾</span>
+`;
+
+old.replaceWith(b);
+
+const panel=document.createElement('div');
+
+panel.className='sj-panel';
+panel.id='sj-panel';
+panel.hidden=true;
+
+while(b.nextSibling){
+  panel.appendChild(b.nextSibling);
+}
+
+s.appendChild(panel);
+
+b.onclick=()=>{
+  panel.hidden=!panel.hidden;
+
+  b.setAttribute(
+    'aria-expanded',
+    String(!panel.hidden)
+  );
+
+  b.lastElementChild.textContent=
+    panel.hidden?'▾':'▴';
+};
+
+const shapes=[
+
+'<rect x="2" y="3" width="20" height="14" rx="2" fill="#354f69"/><path d="M8 21h8M12 17v4"/><path d="M5 6h14" stroke="#9cd9ff"/>',
+
+'<path d="M2 8q10-9 20 0M5 12q7-6 14 0M9 16q3-3 6 0"/><circle cx="12" cy="20" r="1" fill="#8ee8ff"/>',
+
+'<rect x="6" y="1" width="12" height="22" rx="3" fill="#354f69"/><path d="M9 5h6M11 19h2"/><path d="M9 15v-3m3 3V9m3 6V7" stroke="#8ee8ff"/>',
+
+'<rect x="2" y="9" width="20" height="10" rx="3" fill="#354f69"/><path d="M5 9V3M19 9V3M6 15h5"/><circle cx="18" cy="15" r="1" fill="#8ee8ff"/>',
+
+'<path d="M4 6h16M8 6V3h8v3M6 6l1 15h10l1-15M10 10v7M14 10v7"/>',
+
+'<path d="M3 13v-2a9 9 0 0 1 18 0v5q0 5-7 5"/><rect x="2" y="11" width="5" height="8" rx="2" fill="#354f69"/><rect x="17" y="11" width="5" height="8" rx="2" fill="#354f69"/>'
+
+];
+
+s.querySelectorAll('.sj-icono')
+.forEach((el,i)=>{
+
+  el.innerHTML=`
+  <svg viewBox="0 0 24 24"
+    fill="none"
+    stroke="#dcecff"
+    stroke-width="1.7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true">
+    ${shapes[i]}
+  </svg>`;
+
+});
+
+document.getElementById('catalogo').after(s);
+
+})();
+</script>
