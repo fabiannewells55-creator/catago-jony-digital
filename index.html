@@ -1637,3 +1637,250 @@ window.addEventListener(
 
 })();
 </script>
+<style>
+#soluciones-jony {
+  max-width: 850px;
+  margin: 25px auto;
+  padding: 14px;
+  box-sizing: border-box;
+  background: linear-gradient(145deg,#181e26,#080b10);
+  border: 1px solid #555;
+  border-radius: 18px;
+  font-family: Arial,sans-serif;
+  color: #ffffff;
+}
+
+#soluciones-jony * {
+  box-sizing: border-box;
+}
+
+#soluciones-jony .sj-titulo {
+  background: linear-gradient(180deg,#ffb43b,#ff7900,#bd4200);
+  color: #fff;
+  padding: 13px 8px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 21px;
+  font-weight: 900;
+  text-shadow: 0 2px 3px #542000;
+  box-shadow: 0 4px 0 #813000;
+}
+
+#soluciones-jony .sj-intro {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5;
+  margin: 20px 0 14px;
+}
+
+#soluciones-jony .sj-paso {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px 10px;
+  margin: 10px 0;
+  background: linear-gradient(145deg,#242b35,#10141b);
+  border: 1px solid #737780;
+  border-radius: 13px;
+  box-shadow: 0 4px 7px #0008;
+}
+
+#soluciones-jony .sj-numero {
+  flex-shrink: 0;
+  background: linear-gradient(#ffb43b,#f47700);
+  color: white;
+  border-radius: 8px;
+  padding: 7px;
+  font-size: 16px;
+  font-weight: 900;
+  box-shadow: 0 3px 0 #984000;
+}
+
+#soluciones-jony .sj-icono {
+  flex-shrink: 0;
+  width: 32px;
+  font-size: 29px;
+  text-align: center;
+  filter: drop-shadow(0 3px 2px #000);
+}
+
+#soluciones-jony .sj-contenido {
+  flex: 1;
+  min-width: 0;
+}
+
+#soluciones-jony h3 {
+  color: #ff9d25;
+  font-size: 16px;
+  font-weight: 900;
+  margin: 0 0 7px;
+  text-shadow: 0 2px 2px #000;
+}
+
+#soluciones-jony p {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.55;
+  margin: 0;
+}
+
+#soluciones-jony .sj-aviso {
+  background: #32200c;
+  border: 1px solid #ff9800;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 12px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+#soluciones-jony .sj-aviso strong {
+  color: #ffb52b;
+}
+
+#soluciones-jony .sj-whatsapp {
+  display: block;
+  width: 100%;
+  margin-top: 17px;
+  padding: 15px 8px;
+  background: linear-gradient(#32df67,#078d36);
+  color: #fff;
+  border: 1px solid #62ff91;
+  border-radius: 13px;
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 2px 2px #004b1c;
+  box-shadow: 0 4px 0 #005c24;
+  cursor: pointer;
+}
+
+#soluciones-jony .sj-pie {
+  text-align: center;
+  color: #ddd;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+@media(max-width:480px) {
+  #soluciones-jony {
+    padding: 10px;
+  }
+  #soluciones-jony .sj-paso {
+    gap: 7px;
+    padding: 12px 8px;
+  }
+  #soluciones-jony .sj-icono {
+    width: 28px;
+    font-size: 25px;
+  }
+  #soluciones-jony .sj-titulo {
+    font-size: 19px;
+  }
+}
+</style>
+
+<section id="soluciones-jony">
+
+  <div class="sj-titulo">
+    🛠️ SOLUCIONES RÁPIDAS
+  </div>
+
+  <div class="sj-intro">
+    ¿Tu aplicación presenta inconvenientes?
+    Seguí estos pasos.
+  </div>
+
+  <div class="sj-paso">
+    <span class="sj-numero">01</span>
+    <span class="sj-icono">📺</span>
+    <div class="sj-contenido">
+      <h3>Reiniciá tu televisor</h3>
+      <p>Desenchufá el televisor de la corriente durante 10 segundos. Volvé a enchufarlo y encendelo.</p>
+    </div>
+  </div>
+
+  <div class="sj-paso">
+    <span class="sj-numero">02</span>
+    <span class="sj-icono">📶</span>
+    <div class="sj-contenido">
+      <h3>Revisá tu conexión Wi-Fi</h3>
+      <p>Comprobá que tu conexión a Internet funcione correctamente.</p>
+    </div>
+  </div>
+
+  <div class="sj-paso">
+    <span class="sj-numero">03</span>
+    <span class="sj-icono">📱</span>
+    <div class="sj-contenido">
+      <h3>Probá con datos móviles</h3>
+      <p>Desactivá el Wi-Fi del celular y probá la aplicación con datos móviles. Si funciona correctamente, el inconveniente probablemente esté en tu conexión Wi-Fi.</p>
+    </div>
+  </div>
+
+  <div class="sj-paso">
+    <span class="sj-numero">04</span>
+    <span class="sj-icono">📡</span>
+    <div class="sj-contenido">
+      <h3>Configuración del TV Box</h3>
+      <p>Verificá que la fecha y la hora estén correctamente actualizadas. Desenchufá el TV Box durante 10 segundos y repetí las comprobaciones anteriores.</p>
+    </div>
+  </div>
+
+  <div class="sj-paso">
+    <span class="sj-numero">05</span>
+    <span class="sj-icono">⚙️</span>
+    <div class="sj-contenido">
+      <h3>Borrar datos y caché</h3>
+      <p>Ingresá a Ajustes → Aplicaciones → Seleccioná tu aplicación → Almacenamiento.</p>
+      <p>Presioná Borrar caché. Si el problema continúa, presioná Borrar datos.</p>
+
+      <div class="sj-aviso">
+        <strong>⚠️ IMPORTANTE:</strong>
+        Antes de borrar los datos, asegurate de tener tu usuario y contraseña.
+      </div>
+    </div>
+  </div>
+
+  <div class="sj-paso">
+    <span class="sj-numero">06</span>
+    <span class="sj-icono">🎧</span>
+    <div class="sj-contenido">
+      <h3>Soporte técnico</h3>
+      <p>Si realizaste todos los pasos y el inconveniente continúa, comunicate directamente con nuestro soporte técnico.</p>
+    </div>
+  </div>
+
+  <button type="button"
+    class="sj-whatsapp"
+    onclick="contactarSoporteJony()">
+    💬 CONTACTAR A SOPORTE
+  </button>
+
+  <div class="sj-pie">
+    JONY DIGITAL<br>
+    TU ENTRETENIMIENTO SIN LÍMITES
+  </div>
+
+</section>
+
+<script>
+function contactarSoporteJony() {
+  const enlace = document.querySelector(
+    'a[href*="wa.me/"], a[href*="api.whatsapp.com/"], a[href^="whatsapp:"]'
+  );
+
+  if (enlace) {
+    window.open(enlace.href, "_blank", "noopener,noreferrer");
+  } else {
+    alert("Comunicate con el soporte técnico de Jony Digital.");
+  }
+}
+</script>
